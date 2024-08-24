@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medhub_application/domain/model/onBoarding_items.dart';
 import 'package:medhub_application/presentation/utils/color.dart';
-import 'package:medhub_application/presentation/widgets/onBoading/onBoarding_template.dart';
+import 'package:medhub_application/presentation/widgets/onBoading/On_Boarding_template.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -31,6 +31,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: pureWhite,
       body: Center(
         child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -18,11 +18,12 @@ class _CarouselCategoryWidgetState extends State<CarouselCategoryWidget> {
   late PageController controller;
   Timer? _timer;
 
+  @override
   void initState() {
     controller =
         PageController(initialPage: 0, keepPage: true, viewportFraction: 1);
 
-    _timer = Timer.periodic(Duration(seconds: 3), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
       if (selectedIndex < CategoryProductList.categoryProductList.length - 1) {
         selectedIndex++;
       } else {
@@ -30,7 +31,7 @@ class _CarouselCategoryWidgetState extends State<CarouselCategoryWidget> {
       }
       controller.animateToPage(
         selectedIndex,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     });
@@ -49,7 +50,7 @@ class _CarouselCategoryWidgetState extends State<CarouselCategoryWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 130.h,
           child: PageView.builder(
             itemCount: CategoryProductList.categoryProductList.length,

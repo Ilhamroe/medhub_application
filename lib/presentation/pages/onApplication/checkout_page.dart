@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medhub_application/presentation/utils/color.dart';
@@ -53,9 +52,9 @@ class CheckOutPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextItemsWidgets(),
-              AddressWidgets(),
-              PaymentWidgets(),
+              const TextItemsWidgets(),
+              const AddressWidgets(),
+              const PaymentWidgets(),
               Padding(
                 padding: EdgeInsets.only(top: 40.0.r, bottom: 20.r),
                 child: ButtonWidgets(

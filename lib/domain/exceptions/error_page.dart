@@ -9,6 +9,6 @@ class ErrorPage extends StatelessWidget {
     appBar: AppBar(
       title: const Center(child: Text("Error Screen"),),
     ),
-    body: Center(child: const Text("Error Screen",),),);
+    body: const Center(child: Text("Error Screen",),),);
   }
 }

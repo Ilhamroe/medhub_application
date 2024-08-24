@@ -5,12 +5,14 @@ import 'package:medhub_application/presentation/utils/color.dart';
 class DetailProductWidgets extends StatelessWidget {
   final String price;
   final String title;
+  final bool isSelected;
 
   const DetailProductWidgets({
-    Key? key,
+    super.key,
     required this.price,
     required this.title,
-  }) : super(key: key);
+    this.isSelected = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +22,14 @@ class DetailProductWidgets extends StatelessWidget {
         height: 68.r,
         width: 79.r,
         decoration: BoxDecoration(
-          color: itemColor,
+          color: isSelected
+              ? itemColor
+              : containColor,
           borderRadius: BorderRadius.circular(6.r),
           border: Border.all(
-            color: green,
+            color: isSelected
+                ? green
+                : containColor,
             width: 1.0.w,
           ),
         ),
@@ -37,7 +43,9 @@ class DetailProductWidgets extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Overpass-ExtraBold',
                   fontSize: 10.sp,
-                  color: green,
+                  color: isSelected
+                      ? green
+                      : primary, 
                 ),
               ),
               Text(
@@ -45,7 +53,9 @@ class DetailProductWidgets extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Overpass',
                   fontSize: 12.sp,
-                  color: green,
+                  color: isSelected
+                      ? green
+                      : textButton,
                 ),
               ),
             ],

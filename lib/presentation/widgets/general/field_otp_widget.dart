@@ -7,7 +7,7 @@ class FieldOtpWidgets extends StatelessWidget {
 
   @override
  Widget build(BuildContext context) {
-    final int field = 4;
+    const int field = 4;
 
     return Row(
       mainAxisAlignment:

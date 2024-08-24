@@ -108,7 +108,7 @@ class RatingReviewWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   '05 August 2024',
                   style: TextStyle(

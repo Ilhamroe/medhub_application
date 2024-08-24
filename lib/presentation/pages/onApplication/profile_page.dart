@@ -60,7 +60,7 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.h), // Tambahkan sedikit jarak sebelum list
-            Expanded(
+            const Expanded(
               child:
                   ListProfileWidgets(), // Perluas untuk mengisi ruang yang tersedia
             ),

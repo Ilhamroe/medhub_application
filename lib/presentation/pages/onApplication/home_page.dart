@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _searchController = TextEditingController();
+    final searchController = TextEditingController();
     return Stack(
       children: [
         Positioned(
@@ -103,7 +101,7 @@ class HomePage extends StatelessWidget {
                   SearchWidgets(
                     label: 'Search Medicine & Healthcare products',
                     image: 'assets/images/search.svg',
-                    controller: _searchController,
+                    controller: searchController,
                     borderColor: border,
                     buttonColor: button,
                     colorText: grey,
@@ -112,10 +110,10 @@ class HomePage extends StatelessWidget {
                   const CategoryWidget(),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20.0.w),
-                    child: SizedBox(height: 150.h, child: CarouselWidget()),
+                    child: SizedBox(height: 150.h, child: const CarouselWidget()),
                   ),
-                  DealsWidget(),
-                  FeaturedWidget(),
+                  const DealsWidget(),
+                  const FeaturedWidget(),
                 ],
               ),
             ),

@@ -15,7 +15,7 @@ class _DiscountWidgtesState extends State<DiscountWidgtes> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_isVisible) return SizedBox.shrink();
+    if (!_isVisible) return const SizedBox.shrink();
 
     return Container(
       decoration: BoxDecoration(

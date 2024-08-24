@@ -24,7 +24,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
     controller =
         PageController(initialPage: 0, keepPage: true, viewportFraction: 1);
 
-    _timer = Timer.periodic(Duration(seconds: 3), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
       if (selectedIndex < CarouselList.carouselItemList.length - 1) {
         selectedIndex++;
       } else {
@@ -32,7 +32,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       }
       controller.animateToPage(
         selectedIndex,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     });
@@ -49,7 +49,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 180.h,
       child: Stack(
         children: [

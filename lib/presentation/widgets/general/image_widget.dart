@@ -9,7 +9,7 @@ class ImageWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           width: double.infinity,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.r),
@@ -25,7 +25,7 @@ class ImageWidgets extends StatelessWidget {
           child: Padding(
             padding:
                 EdgeInsets.only(top: 0.r, left: 24.r, right: 24.r, bottom: 0.r),
-            child: Container(
+            child: SizedBox(
               width: 200.r,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

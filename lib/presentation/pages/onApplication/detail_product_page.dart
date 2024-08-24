@@ -1,17 +1,24 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medhub_application/presentation/utils/color.dart';
+import 'package:medhub_application/presentation/widgets/general/add_product_card_widget.dart';
 import 'package:medhub_application/presentation/widgets/general/button_widget.dart';
 import 'package:medhub_application/presentation/widgets/general/detail_product_widget.dart';
+import 'package:medhub_application/presentation/widgets/general/product_details_widget.dart';
 import 'package:medhub_application/presentation/widgets/general/rating_review_widget.dart';
 import 'package:medhub_application/presentation/widgets/onAppilcation/category/carousel_category_widget.dart';
 
-class DetailProductPage extends StatelessWidget {
+class DetailProductPage extends StatefulWidget {
   const DetailProductPage({super.key});
+
+  @override
+  State<DetailProductPage> createState() => _DetailProductPageState();
+}
+
+class _DetailProductPageState extends State<DetailProductPage> {
+  int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +35,10 @@ class DetailProductPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: 10.0.w,
             ),
-            child: Icon(Icons.arrow_back, size: 24.r,),
+            child: Icon(
+              Icons.arrow_back,
+              size: 24.r,
+            ),
           ),
         ),
         actions: [
@@ -91,57 +101,13 @@ class DetailProductPage extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 20.0.w),
-                child: SizedBox(height: 150.h, child: CarouselCategoryWidget()),
+                child: SizedBox(height: 150.h, child: const CarouselCategoryWidget()),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
                   vertical: 20.0.w,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Rp 56.000',
-                          style: TextStyle(
-                            fontFamily: 'Overpass-ExtraBold',
-                            fontSize: 18.sp,
-                            color: primary,
-                          ),
-                        ),
-                        Text(
-                          'Etiam mollis',
-                          style: TextStyle(
-                            fontFamily: 'Overpass',
-                            fontSize: 18.sp,
-                            color: textColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          'assets/images/plus_icon.svg',
-                          color: green,
-                        ),
-                        SizedBox(
-                          width: 10.r,
-                        ),
-                        Text(
-                          'Add to cart',
-                          style: TextStyle(
-                            fontFamily: 'Overpass',
-                            fontSize: 18.sp,
-                            color: green,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: const AddProductCardWidgets(),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 9.0.w),
@@ -153,44 +119,53 @@ class DetailProductPage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  DetailProductWidgets(price: 'Rp 56.000', title: '500 pellets'),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 0;
+                      });
+                    },
+                    child: DetailProductWidgets(
+                      price: 'Rp 56.000',
+                      title: '500 pellets',
+                      isSelected: selectedIndex ==
+                          0,
+                    ),
+                  ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0.r),
-                    child: const DetailProductWidgets(
-                        price: 'Rp 100.000', title: '110 pellets'),
-                  ),
-                  DetailProductWidgets(price: 'Rp 160.000', title: '500 pellets'),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0.w),
-                    child: Text(
-                      'Product Details',
-                      style: TextStyle(
-                        fontFamily: 'Overpass-ExtraBold',
-                        fontSize: 16.sp,
-                        color: primary,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 1;
+                        });
+                      },
+                      child: DetailProductWidgets(
+                        price: 'Rp 100.000',
+                        title: '110 pellets',
+                        isSelected: selectedIndex == 1,
                       ),
                     ),
                   ),
-                  Text(
-                    'Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi ut nisi odio. Nulla facilisi.Nunc risus massa, gravida id egestas a, pretium vel tellus. Praesent feugiat diam sit amet pulvinar finibus. Etiam et nisi aliquet, accumsan nisi sit.',
-                    style: TextStyle(
-                      fontFamily: 'Overpass',
-                      fontSize: 14.sp,
-                      color: textColor,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 2;
+                      });
+                    },
+                    child: DetailProductWidgets(
+                      price: 'Rp 160.000',
+                      title: '500 pellets',
+                      isSelected: selectedIndex ==
+                          2,
                     ),
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
+              const ProductDetailsWidgets(),
               const RatingReviewWidget(),
               Padding(
-                padding:  EdgeInsets.only(top: 150.0.r, bottom: 20.r),
+                padding: EdgeInsets.only(top: 50.0.r, bottom: 20.r),
                 child: ButtonWidgets(
                     text: 'GO TO CART',
                     image: '',

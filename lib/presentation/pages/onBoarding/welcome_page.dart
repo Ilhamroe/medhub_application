@@ -11,6 +11,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      return Scaffold(
+      backgroundColor: pureWhite,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +62,6 @@ class WelcomePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            // ElevatedButton(onPressed: () => context.go('/'), child: Text("splash")),
             Padding(
               padding: EdgeInsets.only(top: 30.0.r, bottom: 5.0.r),
               child: ButtonWidgets(text: 'SIGN UP WITH EMAIL', image: '', borderColor: primary, buttonColor: primary, colorText: pureWhite, onPressed: () => context.push('/register')),

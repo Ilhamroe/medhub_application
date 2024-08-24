@@ -10,7 +10,7 @@ class ButtonWidgets extends StatelessWidget {
   final String? image;
   final VoidCallback onPressed;
 
-  const ButtonWidgets({
+  const ButtonWidgets({super.key, 
     required this.text,
     this.image,
     required this.borderColor,
@@ -21,7 +21,7 @@ class ButtonWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 311.w,
       height: 50.h,
       child: ElevatedButton(

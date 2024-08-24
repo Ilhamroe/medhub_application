@@ -23,8 +23,8 @@ class LoginFieldWidgets extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.inputFormatters,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<LoginFieldWidgets> createState() => _LoginFieldWidgetsState();
@@ -60,7 +60,7 @@ class _LoginFieldWidgetsState extends State<LoginFieldWidgets> {
                   padding: EdgeInsets.only(right: 20.r),
                   child: SvgPicture.asset(
                     widget.leadingIcon!,
-                    width: 24, // Adjust size if needed
+                    width: 24,
                     height: 24,
                   ),
                 )

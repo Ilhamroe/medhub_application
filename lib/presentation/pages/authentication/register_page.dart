@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:medhub_application/presentation/utils/color.dart';
 import 'package:medhub_application/presentation/widgets/general/button_widget.dart';
 import 'package:medhub_application/presentation/widgets/general/field_widget.dart';
+import 'package:flutter/services.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -59,6 +60,8 @@ class _RegisterPageState extends State<RegisterPage> {
             LoginFieldWidgets(
               label: 'Mobile Number',
               controller: _phoneController,
+              keyboardType: TextInputType.number, 
+               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             ),
             LoginFieldWidgets(
               label: 'Email',

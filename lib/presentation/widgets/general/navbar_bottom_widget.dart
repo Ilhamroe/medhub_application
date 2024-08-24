@@ -39,7 +39,7 @@ class _NavbarBottomState extends State<NavbarBottom> {
           bucket: bucket,
           child: currentScreen,
         ),
-        bottomNavigationBar: Container(
+        bottomNavigationBar: SizedBox(
           height: 64.h,
           child: BottomAppBar(
             elevation: 3.0.r,

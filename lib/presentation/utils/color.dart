@@ -22,6 +22,7 @@ const Color titlePrflColor = Color.fromRGBO(9, 28, 63, 0.75);
 const Color sideColor = Color.fromRGBO(224, 224, 224, 0.6);
 const Color button = Color.fromRGBO(255, 255, 255, 1);
 const Color border = Color.fromRGBO(65, 87, 255, 0.1);
+const Color containColor = Color.fromRGBO(245, 245, 245, 1);
 const Color textButton = Color.fromRGBO(9, 15, 71, 0.75);
 const Color eclips = Color.fromRGBO(255, 255, 255, 0.07);
 

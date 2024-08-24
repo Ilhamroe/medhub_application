@@ -12,7 +12,7 @@ class SearchWidgets extends StatelessWidget {
   final String? image;
   final VoidCallback onPressed;
 
-  const SearchWidgets({
+  const SearchWidgets({super.key, 
     required this.label,
     required this.controller,
     this.image,

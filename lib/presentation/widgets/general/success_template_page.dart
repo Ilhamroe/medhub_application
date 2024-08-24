@@ -27,7 +27,7 @@ class TemplateSuccessPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Spacer(),
+          const Spacer(),
           SvgPicture.asset('assets/images/success.svg'),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 20.w),
@@ -49,7 +49,7 @@ class TemplateSuccessPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 20.h),
             child: ButtonWidgets(

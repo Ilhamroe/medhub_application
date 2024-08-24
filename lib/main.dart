@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medhub_application/presentation/utils/router.dart'; // Pastikan ini diimpor
+import 'package:medhub_application/presentation/utils/router.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MainApp());
 }
 
@@ -23,7 +28,7 @@ class _MainAppState extends State<MainApp> {
       splitScreenMode: true,
       builder: (_, child) {
         return MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
           child: MaterialApp.router(
             routerConfig: router,
             themeMode: ThemeMode.light,

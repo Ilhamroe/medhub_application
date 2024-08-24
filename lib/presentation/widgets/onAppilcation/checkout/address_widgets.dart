@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medhub_application/domain/model/checkout/address_model.dart';
@@ -36,7 +35,7 @@ class _AddressWidgetsState extends State<AddressWidgets> {
           ),
           ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: addressModel.length,
             itemBuilder: (context, index) {
               final address = addressModel[index];
@@ -114,7 +113,7 @@ class _AddressWidgetsState extends State<AddressWidgets> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.add, color: green),
+                    const Icon(Icons.add, color: green),
                     SizedBox(width: 8.0.w),
                     Text(
                       'Add Address',
